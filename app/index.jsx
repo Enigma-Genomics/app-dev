@@ -16,7 +16,7 @@ export default function App() {
           <Image source={images.cards} className=' h-[300px] w-[300px]' resizeMode='contain' />
           <View className='mt-5 relative'>
             <Text className='text-3xl font-psemibold text-center text-white'>Unleash Your Creativity with
-            <Text className=' text-secondary-200'> Vide</Text>
+            <Text className=' text-secondary'> Vide</Text>
             </Text>
             <Image source={images.path} className='w-[135px] h-[10px] absolute -bottom-1 -right-8' resizeMode='contain' />
           </View>
