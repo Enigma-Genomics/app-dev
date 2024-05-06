@@ -1,6 +1,7 @@
 import { View, Text, Image } from 'react-native'
 import { Tabs, Redirect } from 'expo-router'
 import { icons } from '../../constants'
+import { StatusBar } from 'expo-status-bar'
 
 const tabOptions = [
   {
@@ -41,7 +42,7 @@ const TabsLayout = () => {
     <Tabs
     screenOptions={{
       tabBarShowLabel: false,
-      tabBarActiveTintColor: '#FF9001',
+      tabBarActiveTintColor: '#FF9C01',
       tabBarInactiveTintColor: '#FFFFFF',
       tabBarStyle:{
         backgroundColor: '#161622'
@@ -65,6 +66,7 @@ const TabsLayout = () => {
          />
       ))}
     </Tabs>
+    <StatusBar backgroundColor='#161622' style='light' />
     </>
   )
 }
