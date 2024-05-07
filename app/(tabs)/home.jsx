@@ -6,14 +6,15 @@ import { images } from "../../constants";
 import Trending from "../../components/Trending";
 import EmptyState from "../../components/EmptyState";
 import { useGlobalContext } from "../../context/GlobalProvider";
-import { getAllPosts } from "../../lib/appwrite";
+import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
 import useAppWrite from "../../lib/useAppwrite";
 import VideoCard from "../../components/VideoCard";
 
 const Home = () => {
   const { user } = useGlobalContext();
 
-  const { data: posts, refetch } = useAppWrite(getAllPosts)
+  const { data: posts, refetch } = useAppWrite(getAllPosts);
+  const { data: latestPosts } = useAppWrite(getLatestPosts);
 
   const [refreshing, setRefreshing] = useState(false);
 
@@ -22,7 +23,6 @@ const Home = () => {
     await refetch();
     setRefreshing(false);
   }
-  console.log(posts[0])
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
@@ -51,7 +51,7 @@ const Home = () => {
             <SearchInput placeholder='Search for a video topic' />
             <View className='w-full flex-1 pt-5 pb-8 '>
               <Text className='text-gray-100 text-lg font-regular mb-3'>Latest Videos</Text>
-              <Trending posts={[{ id: 1 }, { id: 2 }, { id: 3 }] ?? []} />
+              <Trending posts={latestPosts ?? []} />
             </View>
           </View>
         )}
