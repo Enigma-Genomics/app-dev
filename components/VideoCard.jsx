@@ -8,6 +8,7 @@ const VideoCard = ({
     title,
     thumbnail,
     video,
+    $id,
     creator: { username, avatar },
   },
 }) => {
@@ -38,9 +39,9 @@ const VideoCard = ({
             </Text>
           </View>
         </View>
-        <View className="pt-2">
+        {/* <TouchableOpacity className="pt-2">
           <Image source={icons.menu} className="h-5 w-5" resizeMode="contain" />
-        </View>
+        </TouchableOpacity> */}
       </View>
       {play ? (
         <Video

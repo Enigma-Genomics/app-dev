@@ -122,6 +122,7 @@ const Create = () => {
         title='Submit & Publish'
         handlePress={submit}
         containerStyles='mt-7'
+        isLoading={uploading}
         />
       </ScrollView>
     </SafeAreaView>

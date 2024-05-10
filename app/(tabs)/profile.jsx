@@ -1,15 +1,14 @@
-import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native'
-import React, { useEffect } from 'react'
-import { router, useLocalSearchParams } from 'expo-router'
+import { View, FlatList, TouchableOpacity, Image } from 'react-native'
+import React from 'react'
+import { router } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import VideoCard from '../../components/VideoCard';
-import SearchInput from '../../components/SearchInput';
 import EmptyState from '../../components/EmptyState';
 import useAppWrite from '../../lib/useAppwrite';
-import { getUserPosts, searchPosts, signout } from '../../lib/appwrite';
+import { getUserPosts, signout } from '../../lib/appwrite';
 import { useGlobalContext } from '../../context/GlobalProvider';
-import { icons, images } from '../../constants';
-import InfoBox from '../../components/Infobox';
+import { icons } from '../../constants';
+import InfoBox from '../../components/InfoBox';
 
 const Profile = () => {
   const { user, setUser, setIsSignedIn } = useGlobalContext();

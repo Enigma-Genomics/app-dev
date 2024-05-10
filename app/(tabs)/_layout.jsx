@@ -15,11 +15,6 @@ const tabOptions = [
     icon: icons.plus,
   },
   {
-    name: 'bookmark',
-    title: 'Bookmark',
-    icon: icons.bookmark,
-  },
-  {
     name: 'profile',
     title: 'Profile',
     icon: icons.profile,
